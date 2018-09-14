@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/two_line_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true"
+    android:minHeight="72dp"
+    android:paddingEnd="?listPreferredItemPaddingRight"
+    android:paddingLeft="?listPreferredItemPaddingLeft"
+    android:paddingRight="?listPreferredItemPaddingRight"
+    android:paddingStart="?listPreferredItemPaddingLeft">
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_map_black_40dp" />
+
+    <LinearLayout
+        android:id="@+id/lines_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignWithParentIfMissing="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_toEndOf="@+id/icon"
+        android:layout_toLeftOf="@+id/deleteB"
+        android:layout_toRightOf="@+id/icon"
+        android:layout_toStartOf="@+id/deleteB"
+        android:orientation="vertical"
+        android:paddingBottom="16dp"
+        android:paddingTop="16dp">
+
+        <TextView
+            android:id="@+id/nameTV"
+            style="@style/TextAppearance.AppCompat.Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            tools:text="First Line" />
+
+        <TextView
+            android:id="@+id/urlTV"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            tools:text="Second Line" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/deleteB"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_clear_black_24dp" />
+</RelativeLayout>

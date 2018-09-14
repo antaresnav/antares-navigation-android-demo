@@ -1,0 +1,50 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion toolVersions.android.compileSdk
+    defaultConfig {
+        minSdkVersion toolVersions.android.minSdk
+        targetSdkVersion toolVersions.android.targetSdk
+        applicationId "com.antaresnav.navigation.demo"
+        versionCode 2
+        versionName "1.1"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    // Support libraries
+    implementation "com.android.support:design:${libVersions.android.appCompat}"
+    implementation "com.android.support:support-vector-drawable:${libVersions.android.appCompat}"
+    implementation "com.android.support.constraint:constraint-layout:${libVersions.android.constraintLayout}"
+
+    // Antares Maps
+    implementation "com.antaresnav.maps:antaresmaps-android:${libVersions.antaresMaps}"
+
+    // Antares Navigation
+    implementation "com.antaresnav.navigation:antaresnavigation-android:${libVersions.antaresNavigation}"
+
+    // Room components
+    implementation "android.arch.persistence.room:runtime:${libVersions.android.room}"
+    annotationProcessor "android.arch.persistence.room:compiler:${libVersions.android.room}"
+    androidTestImplementation "android.arch.persistence.room:testing:${libVersions.android.room}"
+
+    // Lifecycle components
+    implementation "android.arch.lifecycle:extensions:${libVersions.android.archLifecycle}"
+    annotationProcessor "android.arch.lifecycle:compiler:${libVersions.android.archLifecycle}"
+
+    // Google Play Places
+    implementation "com.google.android.gms:play-services-places:${libVersions.playPlaces}"
+
+    testImplementation "junit:junit:${libVersions.junit}"
+    androidTestImplementation "com.android.support.test:runner:${libVersions.testRunner}"
+    androidTestImplementation "com.android.support.test.espresso:espresso-core:${libVersions.espressoCore}"
+}

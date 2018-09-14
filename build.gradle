@@ -1,0 +1,48 @@
+buildscript {
+    
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.1.3'
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven {
+            url ANTARES_REPOSITORY_URL
+        }
+    }
+}
+
+ext {
+    toolVersions = [
+            android : [
+                    compileSdk      : 27,
+                    minSdk          : 15,
+                    targetSdk       : 22
+            ]
+    ]
+    libVersions = [
+            antaresMaps         : "0.8.29",
+            antaresNavigation   : "0.7.54",
+            playPlaces          : "15.0.1",
+            junit               : "4.12",
+            testRunner          : "1.0.2",
+            espressoCore        : "3.0.2",
+            android             : [
+                    appCompat       : "27.1.1",
+                    constraintLayout: "1.1.3",
+                    room            : '1.1.1',
+                    archLifecycle   : '1.1.1',
+            ]
+    ]
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
